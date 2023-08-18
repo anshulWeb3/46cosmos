@@ -11,6 +11,7 @@ func RegisterCodec(cdc *codec.LegacyAmino) {
 	cdc.RegisterConcrete(&MsgCreateKyc{}, "belkyc/CreateKyc", nil)
 	cdc.RegisterConcrete(&MsgUpdateKyc{}, "belkyc/UpdateKyc", nil)
 	cdc.RegisterConcrete(&MsgDeleteKyc{}, "belkyc/DeleteKyc", nil)
+	cdc.RegisterConcrete(&MsgChangeAdmin{}, "belkyc/ChangeAdmin", nil)
 	// this line is used by starport scaffolding # 2
 }
 
@@ -19,6 +20,9 @@ func RegisterInterfaces(registry cdctypes.InterfaceRegistry) {
 		&MsgCreateKyc{},
 		&MsgUpdateKyc{},
 		&MsgDeleteKyc{},
+	)
+	registry.RegisterImplementations((*sdk.Msg)(nil),
+		&MsgChangeAdmin{},
 	)
 	// this line is used by starport scaffolding # 3
 

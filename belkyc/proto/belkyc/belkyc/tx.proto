@@ -8,9 +8,10 @@ option go_package = "belkyc/x/belkyc/types";
 
 // Msg defines the Msg service.
 service Msg {
-  rpc CreateKyc (MsgCreateKyc) returns (MsgCreateKycResponse);
-  rpc UpdateKyc (MsgUpdateKyc) returns (MsgUpdateKycResponse);
-  rpc DeleteKyc (MsgDeleteKyc) returns (MsgDeleteKycResponse);
+  rpc CreateKyc   (MsgCreateKyc  ) returns (MsgCreateKycResponse  );
+  rpc UpdateKyc   (MsgUpdateKyc  ) returns (MsgUpdateKycResponse  );
+  rpc DeleteKyc   (MsgDeleteKyc  ) returns (MsgDeleteKycResponse  );
+  rpc ChangeAdmin (MsgChangeAdmin) returns (MsgChangeAdminResponse);
 }
 message MsgCreateKyc {
   string creator = 1;
@@ -34,4 +35,11 @@ message MsgDeleteKyc {
 }
 
 message MsgDeleteKycResponse {}
+
+message MsgChangeAdmin {
+  string creator = 1;
+  string address = 2;
+}
+
+message MsgChangeAdminResponse {}
 

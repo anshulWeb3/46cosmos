@@ -44079,6 +44079,8 @@ definitions:
         type: boolean
       creator:
         type: string
+  belkyc.belkyc.MsgChangeAdminResponse:
+    type: object
   belkyc.belkyc.MsgCreateKycResponse:
     type: object
   belkyc.belkyc.MsgDeleteKycResponse:
