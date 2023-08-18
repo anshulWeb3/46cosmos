@@ -1,0 +1,12 @@
+syntax = "proto3";
+package belkyc.belkyc;
+
+import "gogoproto/gogo.proto";
+
+option go_package = "belkyc/x/belkyc/types";
+
+// Params defines the parameters for the module.
+message Params {
+  option (gogoproto.goproto_stringer) = false;
+  
+}

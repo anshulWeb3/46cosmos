@@ -1,0 +1,11 @@
+syntax = "proto3";
+package cosmos.belkyc.v1beta1;
+
+option go_package = "github.com/cosmos/cosmos-sdk/x/belkyc/types";
+
+message Kyc {
+  string address = 1; 
+  bool value = 2; 
+  string creator = 3;
+}
+

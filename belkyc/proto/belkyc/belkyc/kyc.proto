@@ -1,0 +1,11 @@
+syntax = "proto3";
+package belkyc.belkyc;
+
+option go_package = "belkyc/x/belkyc/types";
+
+message Kyc {
+  string address = 1; 
+  bool value = 2; 
+  string creator = 3;
+}
+
