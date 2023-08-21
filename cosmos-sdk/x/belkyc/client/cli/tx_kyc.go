@@ -1,6 +1,7 @@
 package cli
 
 import (
+	"strconv"
 	"github.com/cosmos/cosmos-sdk/x/belkyc/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
@@ -8,7 +9,7 @@ import (
 	"github.com/spf13/cast"
 	"github.com/spf13/cobra"
 )
-
+var _ = strconv.Itoa(0)
 func CmdCreateKyc() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "create-kyc [address] [value]",
@@ -99,6 +100,35 @@ func CmdDeleteKyc() *cobra.Command {
 			msg := types.NewMsgDeleteKyc(
 				clientCtx.GetFromAddress().String(),
 				indexAddress,
+			)
+			if err := msg.ValidateBasic(); err != nil {
+				return err
+			}
+			return tx.GenerateOrBroadcastTxCLI(clientCtx, cmd.Flags(), msg)
+		},
+	}
+
+	flags.AddTxFlagsToCmd(cmd)
+
+	return cmd
+}
+
+func CmdChangeAdmin() *cobra.Command {
+	cmd := &cobra.Command{
+		Use:   "change-admin [address]",
+		Short: "change the admin address",
+		Args:  cobra.ExactArgs(1),
+		RunE: func(cmd *cobra.Command, args []string) (err error) {
+			argAddress := args[0]
+
+			clientCtx, err := client.GetClientTxContext(cmd)
+			if err != nil {
+				return err
+			}
+
+			msg := types.NewMsgChangeAdmin(
+				clientCtx.GetFromAddress().String(),
+				argAddress,
 			)
 			if err := msg.ValidateBasic(); err != nil {
 				return err

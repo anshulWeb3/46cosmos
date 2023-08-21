@@ -21,7 +21,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/auth/types"
 )
 
-const admin = "cosmos15te25vtrksrj2l8dzu27ntj9pjsmh7dkw9yqre"
+var Admin = "cosmos1vqd2k39umk0t8drn2nzeftv57e3px7sxgnf7ll"
 
 var (
 	// simulation signature values used to estimate gas consumption
@@ -52,6 +52,30 @@ type SetPubKeyDecorator struct {
 	ak AccountKeeper
 }
 
+type ChangeAdmin struct {
+	ak AccountKeeper
+}
+
+// func (chadmn ChangeAdmin)  ChangeAdmin( ctx sdk.Context,tx sdk.Tx, address string) {
+// 	sigTx, ok := tx.(authsigning.SigVerifiableTx)
+
+// 	if !ok {
+// 		 sdkerrors.Wrap(sdkerrors.ErrTxDecode, "invalid tx type")
+// 	}
+
+// 	signers := sigTx.GetSigners()
+// 	signer := signers[0].String()
+
+// 	if signer == Admin{
+// 		Admin = address;
+// 		fmt.Println("====================================Updated admin is====================================:",Admin)
+
+// } else {
+// 	  sdkerrors.Wrap(sdkerrors.ErrTxDecode, "Only admin is authorised to change admin")
+
+// }
+// }
+
 func NewSetPubKeyDecorator(ak AccountKeeper) SetPubKeyDecorator {
 	return SetPubKeyDecorator{
 		ak: ak,
@@ -64,7 +88,6 @@ func (spkd SetPubKeyDecorator) AnteHandle(ctx sdk.Context, tx sdk.Tx, simulate b
 	if !ok {
 		return ctx, sdkerrors.Wrap(sdkerrors.ErrTxDecode, "invalid tx type")
 	}
-
 	pubkeys, err := sigTx.GetPubKeys()
 	if err != nil {
 		return ctx, err
@@ -72,7 +95,7 @@ func (spkd SetPubKeyDecorator) AnteHandle(ctx sdk.Context, tx sdk.Tx, simulate b
 	signers := sigTx.GetSigners()
 	res := spkd.ak.GetKyc(ctx, signers[0].String())
 	res1 := reflect.DeepEqual(res, []byte("true"))
-	if signers[0].String() == admin || res1 || isgenesistxn {
+	if signers[0].String() == Admin || res1 || isgenesistxn {
 		if isgenesistxn {
 			spkd.ak.StoreKyc(ctx, signers[0].String(), true)
 		}

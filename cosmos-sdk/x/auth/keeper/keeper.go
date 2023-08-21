@@ -14,6 +14,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/address"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
+	ante "github.com/cosmos/cosmos-sdk/x/auth/ante"
 	"github.com/cosmos/cosmos-sdk/x/auth/types"
 	paramtypes "github.com/cosmos/cosmos-sdk/x/params/types"
 )
@@ -147,6 +148,15 @@ func (ak AccountKeeper) GetKyc(ctx sdk.Context, add string) []byte {
 	res := store.Get([]byte(add))
 	fmt.Println("result is -------------", res)
 	return res
+}
+
+func (ak AccountKeeper) ChangeAdmin(ctx sdk.Context, address string) {
+	// var admin = ante.Admin
+	//=================================================================
+	// admin = address;
+	ante.Admin = address
+	fmt.Println("====================================Updated admin is====================================:", ante.Admin)
+
 }
 
 // 	belstorekey := btypes.StoreKeyval()

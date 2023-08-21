@@ -6,7 +6,7 @@
 KEYS="alice"
 CHAINID="sim_904-3 "
 MONIKER="simnode"
-KEYRING="test"
+# KEYRING="test"
 LOGLEVEL="info"
 # Set dedicated home directory for the wasmd instance
 HOMEDIR="/data/kkkk/simd"
@@ -44,10 +44,10 @@ if [[ $overwrite == "y" || $overwrite == "Y" ]]; then
 	rm -rf "$HOMEDIR"
 
 	# Set client config
-	./build/simd config keyring-backend $KEYRING --home "$HOMEDIR"
+	./build/simd config --home "$HOMEDIR"
 	./build/simd config chain-id $CHAINID --home "$HOMEDIR"
 
-	./build/simd keys add $KEYS --keyring-backend $KEYRING --home "$HOMEDIR"
+	./build/simd keys add $KEYS --home "$HOMEDIR"
 
 	./build/simd init $MONIKER -o --chain-id $CHAINID --home "$HOMEDIR"
 
@@ -71,10 +71,10 @@ if [[ $overwrite == "y" || $overwrite == "Y" ]]; then
         sed -i 's/swagger = false/swagger = true/g' "$APP_TOML"
 
 	# Allocate genesis accounts (cosmos formatted addresses)
-	./build/simd add-genesis-account $KEYS 10000000000000000000000000000stake --keyring-backend $KEYRING --home "$HOMEDIR"
+	./build/simd add-genesis-account $KEYS 10000000000000000000000000000stake  --home "$HOMEDIR"
 
 	# Sign genesis transaction
-	./build/simd gentx ${KEYS} 100000000000000000stake --keyring-backend $KEYRING --chain-id $CHAINID --home "$HOMEDIR"
+	./build/simd gentx ${KEYS} 100000000000000000stake --chain-id $CHAINID --home "$HOMEDIR"
 	
 	# Collect genesis tx
 	./build/simd collect-gentxs --home "$HOMEDIR"

@@ -2,13 +2,14 @@ package keeper
 
 import (
 	"context"
+	"fmt"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/cosmos/cosmos-sdk/x/belkyc/types"
 )
 
-const admin = "cosmos15te25vtrksrj2l8dzu27ntj9pjsmh7dkw9yqre"
+var admin = "cosmos1vqd2k39umk0t8drn2nzeftv57e3px7sxgnf7ll"
 
 func (k msgServer) CreateKyc(goCtx context.Context, msg *types.MsgCreateKyc) (*types.MsgCreateKycResponse, error) {
 	ctx := sdk.UnwrapSDKContext(goCtx)
@@ -89,4 +90,19 @@ func (k msgServer) DeleteKyc(goCtx context.Context, msg *types.MsgDeleteKyc) (*t
 	)
 
 	return &types.MsgDeleteKycResponse{}, nil
+}
+
+func (k msgServer) ChangeAdmin(goCtx context.Context, msg *types.MsgChangeAdmin) (*types.MsgChangeAdminResponse, error) {
+	ctx := sdk.UnwrapSDKContext(goCtx)
+
+	if msg.Creator != admin {
+		return &types.MsgChangeAdminResponse{}, sdkerrors.Wrap(sdkerrors.ErrInvalidRequest, "Only admin is authorised to change admin")
+	}
+	admin = msg.Address
+	k.ak.ChangeAdmin(ctx, admin)
+
+	fmt.Println("The changed admin address is: ", admin)
+	_ = ctx
+
+	return &types.MsgChangeAdminResponse{}, nil
 }
