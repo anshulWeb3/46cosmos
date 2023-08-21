@@ -28,6 +28,12 @@ service Query {
     option (google.api.http).get = "/belkyc/belkyc/kyc";
   
   }
+  
+  // Queries a list of GetAdmin items.
+  rpc GetAdmin (QueryGetAdminRequest) returns (QueryGetAdminResponse) {
+    option (google.api.http).get = "/belkyc/belkyc/get_admin";
+  
+  }
 }
 // QueryParamsRequest is request type for the Query/Params RPC method.
 message QueryParamsRequest {}
@@ -55,4 +61,8 @@ message QueryAllKycResponse {
   repeated Kyc                                    kyc        = 1 [(gogoproto.nullable) = false];
            cosmos.base.query.v1beta1.PageResponse pagination = 2;
 }
+
+message QueryGetAdminRequest {}
+
+message QueryGetAdminResponse {}
 

@@ -7,6 +7,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/cosmos/cosmos-sdk/x/belkyc/types"
+	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/status"
 )
 
 var admin = "cosmos1vqd2k39umk0t8drn2nzeftv57e3px7sxgnf7ll"
@@ -106,3 +108,18 @@ func (k msgServer) ChangeAdmin(goCtx context.Context, msg *types.MsgChangeAdmin)
 
 	return &types.MsgChangeAdminResponse{}, nil
 }
+
+func (k Keeper) GetAdmin(goCtx context.Context, req *types.QueryGetAdminRequest) (*types.QueryGetAdminResponse, error) {
+	if req == nil {
+		return nil, status.Error(codes.InvalidArgument, "invalid request")
+	}
+
+	ctx := sdk.UnwrapSDKContext(goCtx)
+
+	// TODO: Process the query
+	_ = ctx
+	
+	return &types.QueryGetAdminResponse{Address: admin}, nil
+}
+
+

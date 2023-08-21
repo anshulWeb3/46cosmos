@@ -52,10 +52,6 @@ type SetPubKeyDecorator struct {
 	ak AccountKeeper
 }
 
-type ChangeAdmin struct {
-	ak AccountKeeper
-}
-
 // func (chadmn ChangeAdmin)  ChangeAdmin( ctx sdk.Context,tx sdk.Tx, address string) {
 // 	sigTx, ok := tx.(authsigning.SigVerifiableTx)
 

@@ -66,3 +66,5 @@ func (k Keeper) GetAllKyc(ctx sdk.Context) (list []types.Kyc) {
 
 	return
 }
+
+

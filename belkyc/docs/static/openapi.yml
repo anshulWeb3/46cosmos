@@ -4,6 +4,35 @@ info:
   name: ''
   description: ''
 paths:
+  /belkyc/belkyc/get_admin:
+    get:
+      summary: Queries a list of GetAdmin items.
+      operationId: BelkycBelkycGetAdmin
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      tags:
+        - Query
   /belkyc/belkyc/kyc:
     get:
       operationId: BelkycBelkycKycAll
@@ -44130,6 +44159,8 @@ definitions:
                    repeated Bar results = 1;
                    PageResponse page = 2;
            }
+  belkyc.belkyc.QueryGetAdminResponse:
+    type: object
   belkyc.belkyc.QueryGetKycResponse:
     type: object
     properties:

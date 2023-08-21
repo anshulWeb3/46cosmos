@@ -55,3 +55,4 @@ func (k Keeper) Kyc(goCtx context.Context, req *types.QueryGetKycRequest) (*type
 
 	return &types.QueryGetKycResponse{Kyc: val}, nil
 }
+
