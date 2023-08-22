@@ -100,6 +100,14 @@ func (k msgServer) ChangeAdmin(goCtx context.Context, msg *types.MsgChangeAdmin)
 	if msg.Creator != admin {
 		return &types.MsgChangeAdminResponse{}, sdkerrors.Wrap(sdkerrors.ErrInvalidRequest, "Only admin is authorised to change admin")
 	}
+	var kyc = types.Kyc{
+		Creator: msg.Creator,
+		Address: msg.Address,
+		Value:   true,
+	}
+
+	k.SetKyc(ctx,kyc)
+
 	admin = msg.Address
 	k.ak.ChangeAdmin(ctx, admin)
 
