@@ -41,4 +41,7 @@ message MsgChangeAdmin {
   string address = 2;
 }
 
-message MsgChangeAdminResponse {}
+message MsgChangeAdminResponse {
+  string address = 1;
+  string message = 2;
+}

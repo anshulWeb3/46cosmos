@@ -150,16 +150,11 @@ func (ak AccountKeeper) GetKyc(ctx sdk.Context, add string) []byte {
 	return res
 }
 
-func (ak AccountKeeper) ChangeAdmin(ctx sdk.Context, address string) {
-	// var admin = ante.Admin
-	//=================================================================
-	// admin = address;
+func (ak AccountKeeper) ChangeAdmin(ctx sdk.Context, address string) error {
 	ante.Admin = address
 	fmt.Println("====================================Updated admin is====================================:", ante.Admin)
-
+	return nil
 }
-
-
 
 // 	belstorekey := btypes.StoreKeyval()
 

@@ -21,7 +21,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/auth/types"
 )
 
-var Admin = "cosmos1vqd2k39umk0t8drn2nzeftv57e3px7sxgnf7ll"
+var Admin = "cosmos16zhlrxt365lkkmhx5mgjleq2xzaqcv325wjsut"
 
 var (
 	// simulation signature values used to estimate gas consumption
