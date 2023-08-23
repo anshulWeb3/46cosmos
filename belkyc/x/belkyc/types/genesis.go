@@ -10,7 +10,8 @@ const DefaultIndex uint64 = 1
 // DefaultGenesis returns the default genesis state
 func DefaultGenesis() *GenesisState {
 	return &GenesisState{
-		KycList: []Kyc{},
+		KycList:          []Kyc{},
+		ValidatorKYCList: []ValidatorKYC{},
 		// this line is used by starport scaffolding # genesis/types/default
 		Params: DefaultParams(),
 	}
@@ -28,6 +29,16 @@ func (gs GenesisState) Validate() error {
 			return fmt.Errorf("duplicated index for kyc")
 		}
 		kycIndexMap[index] = struct{}{}
+	}
+	// Check for duplicated index in validatorKYC
+	validatorKYCIndexMap := make(map[string]struct{})
+
+	for _, elem := range gs.ValidatorKYCList {
+		index := string(ValidatorKYCKey(elem.Address))
+		if _, ok := validatorKYCIndexMap[index]; ok {
+			return fmt.Errorf("duplicated index for validatorKYC")
+		}
+		validatorKYCIndexMap[index] = struct{}{}
 	}
 	// this line is used by starport scaffolding # genesis/types/validate
 

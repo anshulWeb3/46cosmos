@@ -40,6 +40,18 @@ const (
 	// TODO: Determine the simulation weight value
 	defaultWeightMsgChangeAdmin int = 100
 
+	opWeightMsgCreateValidatorKYC = "op_weight_msg_validator_kyc"
+	// TODO: Determine the simulation weight value
+	defaultWeightMsgCreateValidatorKYC int = 100
+
+	opWeightMsgUpdateValidatorKYC = "op_weight_msg_validator_kyc"
+	// TODO: Determine the simulation weight value
+	defaultWeightMsgUpdateValidatorKYC int = 100
+
+	opWeightMsgDeleteValidatorKYC = "op_weight_msg_validator_kyc"
+	// TODO: Determine the simulation weight value
+	defaultWeightMsgDeleteValidatorKYC int = 100
+
 	// this line is used by starport scaffolding # simapp/module/const
 )
 
@@ -52,6 +64,16 @@ func (AppModule) GenerateGenesisState(simState *module.SimulationState) {
 	belkycGenesis := types.GenesisState{
 		Params: types.DefaultParams(),
 		KycList: []types.Kyc{
+			{
+				Creator: sample.AccAddress(),
+				Address: "0",
+			},
+			{
+				Creator: sample.AccAddress(),
+				Address: "1",
+			},
+		},
+		ValidatorKYCList: []types.ValidatorKYC{
 			{
 				Creator: sample.AccAddress(),
 				Address: "0",
@@ -126,6 +148,39 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 	operations = append(operations, simulation.NewWeightedOperation(
 		weightMsgChangeAdmin,
 		belkycsimulation.SimulateMsgChangeAdmin(am.accountKeeper, am.bankKeeper, am.keeper),
+	))
+
+	var weightMsgCreateValidatorKYC int
+	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgCreateValidatorKYC, &weightMsgCreateValidatorKYC, nil,
+		func(_ *rand.Rand) {
+			weightMsgCreateValidatorKYC = defaultWeightMsgCreateValidatorKYC
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgCreateValidatorKYC,
+		belkycsimulation.SimulateMsgCreateValidatorKYC(am.accountKeeper, am.bankKeeper, am.keeper),
+	))
+
+	var weightMsgUpdateValidatorKYC int
+	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgUpdateValidatorKYC, &weightMsgUpdateValidatorKYC, nil,
+		func(_ *rand.Rand) {
+			weightMsgUpdateValidatorKYC = defaultWeightMsgUpdateValidatorKYC
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgUpdateValidatorKYC,
+		belkycsimulation.SimulateMsgUpdateValidatorKYC(am.accountKeeper, am.bankKeeper, am.keeper),
+	))
+
+	var weightMsgDeleteValidatorKYC int
+	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgDeleteValidatorKYC, &weightMsgDeleteValidatorKYC, nil,
+		func(_ *rand.Rand) {
+			weightMsgDeleteValidatorKYC = defaultWeightMsgDeleteValidatorKYC
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgDeleteValidatorKYC,
+		belkycsimulation.SimulateMsgDeleteValidatorKYC(am.accountKeeper, am.bankKeeper, am.keeper),
 	))
 
 	// this line is used by starport scaffolding # simapp/module/operation

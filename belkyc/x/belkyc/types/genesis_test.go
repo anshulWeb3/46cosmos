@@ -30,6 +30,14 @@ func TestGenesisState_Validate(t *testing.T) {
 						Address: "1",
 					},
 				},
+				ValidatorKYCList: []types.ValidatorKYC{
+					{
+						Address: "0",
+					},
+					{
+						Address: "1",
+					},
+				},
 				// this line is used by starport scaffolding # types/genesis/validField
 			},
 			valid: true,
@@ -38,6 +46,20 @@ func TestGenesisState_Validate(t *testing.T) {
 			desc: "duplicated kyc",
 			genState: &types.GenesisState{
 				KycList: []types.Kyc{
+					{
+						Address: "0",
+					},
+					{
+						Address: "0",
+					},
+				},
+			},
+			valid: false,
+		},
+		{
+			desc: "duplicated validatorKYC",
+			genState: &types.GenesisState{
+				ValidatorKYCList: []types.ValidatorKYC{
 					{
 						Address: "0",
 					},

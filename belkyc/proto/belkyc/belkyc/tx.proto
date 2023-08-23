@@ -3,15 +3,19 @@ syntax = "proto3";
 package belkyc.belkyc;
 
 import "belkyc/belkyc/kyc.proto";
+import "belkyc/belkyc/validator_kyc.proto";
 
 option go_package = "belkyc/x/belkyc/types";
 
 // Msg defines the Msg service.
 service Msg {
-  rpc CreateKyc   (MsgCreateKyc  ) returns (MsgCreateKycResponse  );
-  rpc UpdateKyc   (MsgUpdateKyc  ) returns (MsgUpdateKycResponse  );
-  rpc DeleteKyc   (MsgDeleteKyc  ) returns (MsgDeleteKycResponse  );
-  rpc ChangeAdmin (MsgChangeAdmin) returns (MsgChangeAdminResponse);
+  rpc CreateKyc          (MsgCreateKyc         ) returns (MsgCreateKycResponse         );
+  rpc UpdateKyc          (MsgUpdateKyc         ) returns (MsgUpdateKycResponse         );
+  rpc DeleteKyc          (MsgDeleteKyc         ) returns (MsgDeleteKycResponse         );
+  rpc ChangeAdmin        (MsgChangeAdmin       ) returns (MsgChangeAdminResponse       );
+  rpc CreateValidatorKYC (MsgCreateValidatorKYC) returns (MsgCreateValidatorKYCResponse);
+  rpc UpdateValidatorKYC (MsgUpdateValidatorKYC) returns (MsgUpdateValidatorKYCResponse);
+  rpc DeleteValidatorKYC (MsgDeleteValidatorKYC) returns (MsgDeleteValidatorKYCResponse);
 }
 message MsgCreateKyc {
   string creator = 1;
@@ -42,4 +46,27 @@ message MsgChangeAdmin {
 }
 
 message MsgChangeAdminResponse {}
+
+message MsgCreateValidatorKYC {
+  string creator = 1;
+  string address = 2;
+  bool   value   = 3;
+}
+
+message MsgCreateValidatorKYCResponse {}
+
+message MsgUpdateValidatorKYC {
+  string creator = 1;
+  string address = 2;
+  bool   value   = 3;
+}
+
+message MsgUpdateValidatorKYCResponse {}
+
+message MsgDeleteValidatorKYC {
+  string creator = 1;
+  string address = 2;
+}
+
+message MsgDeleteValidatorKYCResponse {}
 

@@ -7,6 +7,7 @@ import "google/api/annotations.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
 import "belkyc/belkyc/params.proto";
 import "belkyc/belkyc/kyc.proto";
+import "belkyc/belkyc/validator_kyc.proto";
 
 option go_package = "belkyc/x/belkyc/types";
 
@@ -32,6 +33,16 @@ service Query {
   // Queries a list of GetAdmin items.
   rpc GetAdmin (QueryGetAdminRequest) returns (QueryGetAdminResponse) {
     option (google.api.http).get = "/belkyc/belkyc/get_admin";
+  
+  }
+  
+  // Queries a list of ValidatorKYC items.
+  rpc ValidatorKYC    (QueryGetValidatorKYCRequest) returns (QueryGetValidatorKYCResponse) {
+    option (google.api.http).get = "/belkyc/belkyc/validator_kyc/{address}";
+  
+  }
+  rpc ValidatorKYCAll (QueryAllValidatorKYCRequest) returns (QueryAllValidatorKYCResponse) {
+    option (google.api.http).get = "/belkyc/belkyc/validator_kyc";
   
   }
 }
@@ -65,4 +76,21 @@ message QueryAllKycResponse {
 message QueryGetAdminRequest {}
 
 message QueryGetAdminResponse {}
+
+message QueryGetValidatorKYCRequest {
+  string address = 1;
+}
+
+message QueryGetValidatorKYCResponse {
+  ValidatorKYC validatorKYC = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryAllValidatorKYCRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllValidatorKYCResponse {
+  repeated ValidatorKYC                           validatorKYC = 1 [(gogoproto.nullable) = false];
+           cosmos.base.query.v1beta1.PageResponse pagination   = 2;
+}
 

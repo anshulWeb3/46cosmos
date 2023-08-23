@@ -395,6 +395,286 @@ func (m *MsgChangeAdminResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_MsgChangeAdminResponse proto.InternalMessageInfo
 
+type MsgCreateValidatorKYC struct {
+	Creator string `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	Address string `protobuf:"bytes,2,opt,name=address,proto3" json:"address,omitempty"`
+	Value   bool   `protobuf:"varint,3,opt,name=value,proto3" json:"value,omitempty"`
+}
+
+func (m *MsgCreateValidatorKYC) Reset()         { *m = MsgCreateValidatorKYC{} }
+func (m *MsgCreateValidatorKYC) String() string { return proto.CompactTextString(m) }
+func (*MsgCreateValidatorKYC) ProtoMessage()    {}
+func (*MsgCreateValidatorKYC) Descriptor() ([]byte, []int) {
+	return fileDescriptor_424c6e7c359eb862, []int{8}
+}
+func (m *MsgCreateValidatorKYC) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgCreateValidatorKYC) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgCreateValidatorKYC.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgCreateValidatorKYC) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgCreateValidatorKYC.Merge(m, src)
+}
+func (m *MsgCreateValidatorKYC) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgCreateValidatorKYC) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgCreateValidatorKYC.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgCreateValidatorKYC proto.InternalMessageInfo
+
+func (m *MsgCreateValidatorKYC) GetCreator() string {
+	if m != nil {
+		return m.Creator
+	}
+	return ""
+}
+
+func (m *MsgCreateValidatorKYC) GetAddress() string {
+	if m != nil {
+		return m.Address
+	}
+	return ""
+}
+
+func (m *MsgCreateValidatorKYC) GetValue() bool {
+	if m != nil {
+		return m.Value
+	}
+	return false
+}
+
+type MsgCreateValidatorKYCResponse struct {
+}
+
+func (m *MsgCreateValidatorKYCResponse) Reset()         { *m = MsgCreateValidatorKYCResponse{} }
+func (m *MsgCreateValidatorKYCResponse) String() string { return proto.CompactTextString(m) }
+func (*MsgCreateValidatorKYCResponse) ProtoMessage()    {}
+func (*MsgCreateValidatorKYCResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_424c6e7c359eb862, []int{9}
+}
+func (m *MsgCreateValidatorKYCResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgCreateValidatorKYCResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgCreateValidatorKYCResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgCreateValidatorKYCResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgCreateValidatorKYCResponse.Merge(m, src)
+}
+func (m *MsgCreateValidatorKYCResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgCreateValidatorKYCResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgCreateValidatorKYCResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgCreateValidatorKYCResponse proto.InternalMessageInfo
+
+type MsgUpdateValidatorKYC struct {
+	Creator string `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	Address string `protobuf:"bytes,2,opt,name=address,proto3" json:"address,omitempty"`
+	Value   bool   `protobuf:"varint,3,opt,name=value,proto3" json:"value,omitempty"`
+}
+
+func (m *MsgUpdateValidatorKYC) Reset()         { *m = MsgUpdateValidatorKYC{} }
+func (m *MsgUpdateValidatorKYC) String() string { return proto.CompactTextString(m) }
+func (*MsgUpdateValidatorKYC) ProtoMessage()    {}
+func (*MsgUpdateValidatorKYC) Descriptor() ([]byte, []int) {
+	return fileDescriptor_424c6e7c359eb862, []int{10}
+}
+func (m *MsgUpdateValidatorKYC) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgUpdateValidatorKYC) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgUpdateValidatorKYC.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgUpdateValidatorKYC) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgUpdateValidatorKYC.Merge(m, src)
+}
+func (m *MsgUpdateValidatorKYC) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgUpdateValidatorKYC) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgUpdateValidatorKYC.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgUpdateValidatorKYC proto.InternalMessageInfo
+
+func (m *MsgUpdateValidatorKYC) GetCreator() string {
+	if m != nil {
+		return m.Creator
+	}
+	return ""
+}
+
+func (m *MsgUpdateValidatorKYC) GetAddress() string {
+	if m != nil {
+		return m.Address
+	}
+	return ""
+}
+
+func (m *MsgUpdateValidatorKYC) GetValue() bool {
+	if m != nil {
+		return m.Value
+	}
+	return false
+}
+
+type MsgUpdateValidatorKYCResponse struct {
+}
+
+func (m *MsgUpdateValidatorKYCResponse) Reset()         { *m = MsgUpdateValidatorKYCResponse{} }
+func (m *MsgUpdateValidatorKYCResponse) String() string { return proto.CompactTextString(m) }
+func (*MsgUpdateValidatorKYCResponse) ProtoMessage()    {}
+func (*MsgUpdateValidatorKYCResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_424c6e7c359eb862, []int{11}
+}
+func (m *MsgUpdateValidatorKYCResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgUpdateValidatorKYCResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgUpdateValidatorKYCResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgUpdateValidatorKYCResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgUpdateValidatorKYCResponse.Merge(m, src)
+}
+func (m *MsgUpdateValidatorKYCResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgUpdateValidatorKYCResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgUpdateValidatorKYCResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgUpdateValidatorKYCResponse proto.InternalMessageInfo
+
+type MsgDeleteValidatorKYC struct {
+	Creator string `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	Address string `protobuf:"bytes,2,opt,name=address,proto3" json:"address,omitempty"`
+}
+
+func (m *MsgDeleteValidatorKYC) Reset()         { *m = MsgDeleteValidatorKYC{} }
+func (m *MsgDeleteValidatorKYC) String() string { return proto.CompactTextString(m) }
+func (*MsgDeleteValidatorKYC) ProtoMessage()    {}
+func (*MsgDeleteValidatorKYC) Descriptor() ([]byte, []int) {
+	return fileDescriptor_424c6e7c359eb862, []int{12}
+}
+func (m *MsgDeleteValidatorKYC) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgDeleteValidatorKYC) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgDeleteValidatorKYC.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgDeleteValidatorKYC) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgDeleteValidatorKYC.Merge(m, src)
+}
+func (m *MsgDeleteValidatorKYC) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgDeleteValidatorKYC) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgDeleteValidatorKYC.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgDeleteValidatorKYC proto.InternalMessageInfo
+
+func (m *MsgDeleteValidatorKYC) GetCreator() string {
+	if m != nil {
+		return m.Creator
+	}
+	return ""
+}
+
+func (m *MsgDeleteValidatorKYC) GetAddress() string {
+	if m != nil {
+		return m.Address
+	}
+	return ""
+}
+
+type MsgDeleteValidatorKYCResponse struct {
+}
+
+func (m *MsgDeleteValidatorKYCResponse) Reset()         { *m = MsgDeleteValidatorKYCResponse{} }
+func (m *MsgDeleteValidatorKYCResponse) String() string { return proto.CompactTextString(m) }
+func (*MsgDeleteValidatorKYCResponse) ProtoMessage()    {}
+func (*MsgDeleteValidatorKYCResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_424c6e7c359eb862, []int{13}
+}
+func (m *MsgDeleteValidatorKYCResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgDeleteValidatorKYCResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgDeleteValidatorKYCResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgDeleteValidatorKYCResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgDeleteValidatorKYCResponse.Merge(m, src)
+}
+func (m *MsgDeleteValidatorKYCResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgDeleteValidatorKYCResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgDeleteValidatorKYCResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgDeleteValidatorKYCResponse proto.InternalMessageInfo
+
 func init() {
 	proto.RegisterType((*MsgCreateKyc)(nil), "belkyc.belkyc.MsgCreateKyc")
 	proto.RegisterType((*MsgCreateKycResponse)(nil), "belkyc.belkyc.MsgCreateKycResponse")
@@ -404,32 +684,44 @@ func init() {
 	proto.RegisterType((*MsgDeleteKycResponse)(nil), "belkyc.belkyc.MsgDeleteKycResponse")
 	proto.RegisterType((*MsgChangeAdmin)(nil), "belkyc.belkyc.MsgChangeAdmin")
 	proto.RegisterType((*MsgChangeAdminResponse)(nil), "belkyc.belkyc.MsgChangeAdminResponse")
+	proto.RegisterType((*MsgCreateValidatorKYC)(nil), "belkyc.belkyc.MsgCreateValidatorKYC")
+	proto.RegisterType((*MsgCreateValidatorKYCResponse)(nil), "belkyc.belkyc.MsgCreateValidatorKYCResponse")
+	proto.RegisterType((*MsgUpdateValidatorKYC)(nil), "belkyc.belkyc.MsgUpdateValidatorKYC")
+	proto.RegisterType((*MsgUpdateValidatorKYCResponse)(nil), "belkyc.belkyc.MsgUpdateValidatorKYCResponse")
+	proto.RegisterType((*MsgDeleteValidatorKYC)(nil), "belkyc.belkyc.MsgDeleteValidatorKYC")
+	proto.RegisterType((*MsgDeleteValidatorKYCResponse)(nil), "belkyc.belkyc.MsgDeleteValidatorKYCResponse")
 }
 
 func init() { proto.RegisterFile("belkyc/belkyc/tx.proto", fileDescriptor_424c6e7c359eb862) }
 
 var fileDescriptor_424c6e7c359eb862 = []byte{
-	// 309 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x12, 0x4b, 0x4a, 0xcd, 0xc9,
-	0xae, 0x4c, 0xd6, 0x87, 0x52, 0x25, 0x15, 0x7a, 0x05, 0x45, 0xf9, 0x25, 0xf9, 0x42, 0xbc, 0x10,
-	0x01, 0x3d, 0x08, 0x25, 0x25, 0x8e, 0xaa, 0x0c, 0x24, 0x03, 0x56, 0xa7, 0x14, 0xc1, 0xc5, 0xe3,
-	0x5b, 0x9c, 0xee, 0x5c, 0x94, 0x9a, 0x58, 0x92, 0xea, 0x5d, 0x99, 0x2c, 0x24, 0xc1, 0xc5, 0x9e,
-	0x0c, 0xe2, 0xe4, 0x17, 0x49, 0x30, 0x2a, 0x30, 0x6a, 0x70, 0x06, 0xc1, 0xb8, 0x20, 0x99, 0xc4,
-	0x94, 0x94, 0xa2, 0xd4, 0xe2, 0x62, 0x09, 0x26, 0x88, 0x0c, 0x94, 0x2b, 0x24, 0xc2, 0xc5, 0x5a,
-	0x96, 0x98, 0x53, 0x9a, 0x2a, 0xc1, 0xac, 0xc0, 0xa8, 0xc1, 0x11, 0x04, 0xe1, 0x28, 0x89, 0x71,
-	0x89, 0x20, 0x9b, 0x1c, 0x94, 0x5a, 0x5c, 0x90, 0x9f, 0x57, 0x9c, 0x0a, 0xb5, 0x31, 0xb4, 0x20,
-	0x85, 0x46, 0x36, 0xc2, 0x4d, 0x86, 0xdb, 0xe8, 0x04, 0xb6, 0xd1, 0x25, 0x35, 0x27, 0x95, 0x6c,
-	0x1b, 0xa1, 0x66, 0xc3, 0xcd, 0x80, 0x9b, 0xed, 0xc2, 0xc5, 0x07, 0xf2, 0x65, 0x46, 0x62, 0x5e,
-	0x7a, 0xaa, 0x63, 0x4a, 0x6e, 0x66, 0x1e, 0x59, 0xa6, 0x4b, 0x70, 0x89, 0xa1, 0x9a, 0x02, 0x33,
-	0xdf, 0xe8, 0x38, 0x13, 0x17, 0xb3, 0x6f, 0x71, 0xba, 0x90, 0x2f, 0x17, 0x27, 0x22, 0x92, 0xa4,
-	0xf5, 0x50, 0x62, 0x57, 0x0f, 0x39, 0x9c, 0xa5, 0x94, 0xf1, 0x48, 0xc2, 0x8c, 0x05, 0x19, 0x87,
-	0x88, 0x01, 0x2c, 0xc6, 0xc1, 0x25, 0xb1, 0x19, 0x87, 0x11, 0xc2, 0x20, 0xe3, 0x10, 0xc1, 0x8b,
-	0xc5, 0x38, 0xb8, 0x24, 0x36, 0xe3, 0x30, 0x02, 0x55, 0x28, 0x98, 0x8b, 0x1b, 0x39, 0x44, 0x65,
-	0xb1, 0xf8, 0x08, 0x21, 0x2d, 0xa5, 0x8a, 0x57, 0x1a, 0x66, 0xa8, 0x93, 0xfe, 0x89, 0x47, 0x72,
-	0x8c, 0x17, 0x1e, 0xc9, 0x31, 0x3e, 0x78, 0x24, 0xc7, 0x38, 0xe1, 0xb1, 0x1c, 0xc3, 0x85, 0xc7,
-	0x72, 0x0c, 0x37, 0x1e, 0xcb, 0x31, 0x44, 0x89, 0x42, 0x73, 0x45, 0x05, 0x3c, 0x17, 0x55, 0x16,
-	0xa4, 0x16, 0x27, 0xb1, 0x81, 0x73, 0x88, 0x31, 0x20, 0x00, 0x00, 0xff, 0xff, 0x91, 0x09, 0x2f,
-	0xa5, 0x63, 0x03, 0x00, 0x00,
+	// 416 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xb4, 0x95, 0xcd, 0x4e, 0xc2, 0x40,
+	0x14, 0x85, 0xa9, 0x04, 0x95, 0xeb, 0xcf, 0xa2, 0x01, 0x6c, 0x6a, 0xa8, 0x88, 0x98, 0xb0, 0x30,
+	0x25, 0xd1, 0x27, 0x10, 0xd8, 0x11, 0x36, 0x18, 0x8d, 0xba, 0x31, 0x03, 0x9d, 0x00, 0xb1, 0xd2,
+	0xa6, 0x53, 0x09, 0x3c, 0x80, 0x7b, 0x1f, 0xcb, 0x25, 0x4b, 0x97, 0x06, 0x5e, 0xc4, 0x4c, 0x7f,
+	0xa6, 0xad, 0x9d, 0x82, 0x41, 0x59, 0x35, 0x97, 0x73, 0xf3, 0x9d, 0xdb, 0xcb, 0x99, 0x29, 0x14,
+	0xba, 0x58, 0x7f, 0x9e, 0xf6, 0x6a, 0xde, 0xc3, 0x9e, 0xa8, 0xa6, 0x65, 0xd8, 0x86, 0x78, 0xe0,
+	0xfe, 0xa0, 0xba, 0x0f, 0xf9, 0x28, 0xda, 0x46, 0x15, 0xa7, 0x4f, 0x3e, 0x8d, 0x0a, 0x63, 0xa4,
+	0x0f, 0x35, 0x64, 0x1b, 0xd6, 0x13, 0x6b, 0x29, 0xdf, 0xc3, 0x7e, 0x9b, 0xf4, 0x1b, 0x16, 0x46,
+	0x36, 0x6e, 0x4d, 0x7b, 0xa2, 0x04, 0x3b, 0x3d, 0x5a, 0x18, 0x96, 0x24, 0x94, 0x84, 0x6a, 0xb6,
+	0xe3, 0x97, 0x54, 0x41, 0x9a, 0x66, 0x61, 0x42, 0xa4, 0x2d, 0x57, 0xf1, 0x4a, 0x31, 0x07, 0x99,
+	0x31, 0xd2, 0x5f, 0xb1, 0x94, 0x2e, 0x09, 0xd5, 0xdd, 0x8e, 0x5b, 0x94, 0x0b, 0x90, 0x0b, 0x93,
+	0x3b, 0x98, 0x98, 0xc6, 0x88, 0x60, 0xcf, 0xf1, 0xd6, 0xd4, 0x36, 0xe4, 0xc8, 0xc8, 0xcc, 0xb1,
+	0xee, 0x38, 0x36, 0xb1, 0x8e, 0xd7, 0x76, 0xf4, 0xd8, 0x8c, 0xc1, 0xd8, 0x4d, 0x38, 0xa4, 0x6f,
+	0x39, 0x40, 0xa3, 0x3e, 0xbe, 0xd6, 0x5e, 0x86, 0xa3, 0xb5, 0xe8, 0x12, 0x14, 0xa2, 0x14, 0xc6,
+	0x47, 0x90, 0x67, 0x5b, 0xbc, 0xf3, 0xff, 0xbf, 0xd6, 0x43, 0xe3, 0x1f, 0xd7, 0x76, 0x02, 0x45,
+	0xae, 0xc5, 0x8f, 0x19, 0xdc, 0xbd, 0x6e, 0x74, 0x86, 0xb8, 0x05, 0x9b, 0xa1, 0xe5, 0xcc, 0xe0,
+	0xee, 0xff, 0xaf, 0x33, 0x78, 0x6e, 0x71, 0x98, 0xef, 0x76, 0xf9, 0x96, 0x81, 0x74, 0x9b, 0xf4,
+	0xc5, 0x36, 0x64, 0x83, 0xa3, 0x71, 0xac, 0x46, 0x8e, 0x9d, 0x1a, 0x4e, 0xb7, 0x7c, 0xb6, 0x44,
+	0xf4, 0xb1, 0x14, 0x17, 0xe4, 0x9e, 0x83, 0x63, 0x22, 0x0f, 0x17, 0xcb, 0x35, 0xc5, 0x05, 0xa1,
+	0xe6, 0xe0, 0x98, 0xc8, 0xc3, 0xc5, 0xa2, 0x2c, 0xde, 0xc0, 0x5e, 0x38, 0xc7, 0x45, 0xce, 0x1b,
+	0x05, 0xb2, 0x7c, 0xbe, 0x54, 0x66, 0xd0, 0x01, 0x88, 0x9c, 0xf0, 0x56, 0x92, 0xb6, 0x15, 0xee,
+	0x92, 0x2f, 0x7e, 0xd3, 0x15, 0x76, 0xe2, 0x44, 0xb4, 0x92, 0xb4, 0xc8, 0x55, 0x4e, 0xc9, 0x59,
+	0xa4, 0x4e, 0x9c, 0x20, 0x56, 0x92, 0x76, 0xbc, 0xca, 0x29, 0x39, 0x87, 0xf5, 0xda, 0xc7, 0x5c,
+	0x11, 0x66, 0x73, 0x45, 0xf8, 0x9a, 0x2b, 0xc2, 0xfb, 0x42, 0x49, 0xcd, 0x16, 0x4a, 0xea, 0x73,
+	0xa1, 0xa4, 0x1e, 0xf3, 0xde, 0x9d, 0x3e, 0x61, 0x1f, 0x87, 0xa9, 0x89, 0x49, 0x77, 0xdb, 0xb9,
+	0xd5, 0xaf, 0xbe, 0x03, 0x00, 0x00, 0xff, 0xff, 0xf2, 0x3d, 0xcd, 0x38, 0x3a, 0x06, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -448,6 +740,9 @@ type MsgClient interface {
 	UpdateKyc(ctx context.Context, in *MsgUpdateKyc, opts ...grpc.CallOption) (*MsgUpdateKycResponse, error)
 	DeleteKyc(ctx context.Context, in *MsgDeleteKyc, opts ...grpc.CallOption) (*MsgDeleteKycResponse, error)
 	ChangeAdmin(ctx context.Context, in *MsgChangeAdmin, opts ...grpc.CallOption) (*MsgChangeAdminResponse, error)
+	CreateValidatorKYC(ctx context.Context, in *MsgCreateValidatorKYC, opts ...grpc.CallOption) (*MsgCreateValidatorKYCResponse, error)
+	UpdateValidatorKYC(ctx context.Context, in *MsgUpdateValidatorKYC, opts ...grpc.CallOption) (*MsgUpdateValidatorKYCResponse, error)
+	DeleteValidatorKYC(ctx context.Context, in *MsgDeleteValidatorKYC, opts ...grpc.CallOption) (*MsgDeleteValidatorKYCResponse, error)
 }
 
 type msgClient struct {
@@ -494,12 +789,42 @@ func (c *msgClient) ChangeAdmin(ctx context.Context, in *MsgChangeAdmin, opts ..
 	return out, nil
 }
 
+func (c *msgClient) CreateValidatorKYC(ctx context.Context, in *MsgCreateValidatorKYC, opts ...grpc.CallOption) (*MsgCreateValidatorKYCResponse, error) {
+	out := new(MsgCreateValidatorKYCResponse)
+	err := c.cc.Invoke(ctx, "/belkyc.belkyc.Msg/CreateValidatorKYC", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) UpdateValidatorKYC(ctx context.Context, in *MsgUpdateValidatorKYC, opts ...grpc.CallOption) (*MsgUpdateValidatorKYCResponse, error) {
+	out := new(MsgUpdateValidatorKYCResponse)
+	err := c.cc.Invoke(ctx, "/belkyc.belkyc.Msg/UpdateValidatorKYC", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) DeleteValidatorKYC(ctx context.Context, in *MsgDeleteValidatorKYC, opts ...grpc.CallOption) (*MsgDeleteValidatorKYCResponse, error) {
+	out := new(MsgDeleteValidatorKYCResponse)
+	err := c.cc.Invoke(ctx, "/belkyc.belkyc.Msg/DeleteValidatorKYC", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MsgServer is the server API for Msg service.
 type MsgServer interface {
 	CreateKyc(context.Context, *MsgCreateKyc) (*MsgCreateKycResponse, error)
 	UpdateKyc(context.Context, *MsgUpdateKyc) (*MsgUpdateKycResponse, error)
 	DeleteKyc(context.Context, *MsgDeleteKyc) (*MsgDeleteKycResponse, error)
 	ChangeAdmin(context.Context, *MsgChangeAdmin) (*MsgChangeAdminResponse, error)
+	CreateValidatorKYC(context.Context, *MsgCreateValidatorKYC) (*MsgCreateValidatorKYCResponse, error)
+	UpdateValidatorKYC(context.Context, *MsgUpdateValidatorKYC) (*MsgUpdateValidatorKYCResponse, error)
+	DeleteValidatorKYC(context.Context, *MsgDeleteValidatorKYC) (*MsgDeleteValidatorKYCResponse, error)
 }
 
 // UnimplementedMsgServer can be embedded to have forward compatible implementations.
@@ -517,6 +842,15 @@ func (*UnimplementedMsgServer) DeleteKyc(ctx context.Context, req *MsgDeleteKyc)
 }
 func (*UnimplementedMsgServer) ChangeAdmin(ctx context.Context, req *MsgChangeAdmin) (*MsgChangeAdminResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ChangeAdmin not implemented")
+}
+func (*UnimplementedMsgServer) CreateValidatorKYC(ctx context.Context, req *MsgCreateValidatorKYC) (*MsgCreateValidatorKYCResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateValidatorKYC not implemented")
+}
+func (*UnimplementedMsgServer) UpdateValidatorKYC(ctx context.Context, req *MsgUpdateValidatorKYC) (*MsgUpdateValidatorKYCResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateValidatorKYC not implemented")
+}
+func (*UnimplementedMsgServer) DeleteValidatorKYC(ctx context.Context, req *MsgDeleteValidatorKYC) (*MsgDeleteValidatorKYCResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteValidatorKYC not implemented")
 }
 
 func RegisterMsgServer(s grpc1.Server, srv MsgServer) {
@@ -595,6 +929,60 @@ func _Msg_ChangeAdmin_Handler(srv interface{}, ctx context.Context, dec func(int
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Msg_CreateValidatorKYC_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgCreateValidatorKYC)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).CreateValidatorKYC(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/belkyc.belkyc.Msg/CreateValidatorKYC",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).CreateValidatorKYC(ctx, req.(*MsgCreateValidatorKYC))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_UpdateValidatorKYC_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgUpdateValidatorKYC)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).UpdateValidatorKYC(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/belkyc.belkyc.Msg/UpdateValidatorKYC",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).UpdateValidatorKYC(ctx, req.(*MsgUpdateValidatorKYC))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_DeleteValidatorKYC_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgDeleteValidatorKYC)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).DeleteValidatorKYC(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/belkyc.belkyc.Msg/DeleteValidatorKYC",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).DeleteValidatorKYC(ctx, req.(*MsgDeleteValidatorKYC))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Msg_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "belkyc.belkyc.Msg",
 	HandlerType: (*MsgServer)(nil),
@@ -614,6 +1002,18 @@ var _Msg_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ChangeAdmin",
 			Handler:    _Msg_ChangeAdmin_Handler,
+		},
+		{
+			MethodName: "CreateValidatorKYC",
+			Handler:    _Msg_CreateValidatorKYC_Handler,
+		},
+		{
+			MethodName: "UpdateValidatorKYC",
+			Handler:    _Msg_UpdateValidatorKYC_Handler,
+		},
+		{
+			MethodName: "DeleteValidatorKYC",
+			Handler:    _Msg_DeleteValidatorKYC_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -880,6 +1280,206 @@ func (m *MsgChangeAdminResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) 
 	return len(dAtA) - i, nil
 }
 
+func (m *MsgCreateValidatorKYC) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgCreateValidatorKYC) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgCreateValidatorKYC) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Value {
+		i--
+		if m.Value {
+			dAtA[i] = 1
+		} else {
+			dAtA[i] = 0
+		}
+		i--
+		dAtA[i] = 0x18
+	}
+	if len(m.Address) > 0 {
+		i -= len(m.Address)
+		copy(dAtA[i:], m.Address)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Address)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Creator) > 0 {
+		i -= len(m.Creator)
+		copy(dAtA[i:], m.Creator)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Creator)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgCreateValidatorKYCResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgCreateValidatorKYCResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgCreateValidatorKYCResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgUpdateValidatorKYC) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgUpdateValidatorKYC) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgUpdateValidatorKYC) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Value {
+		i--
+		if m.Value {
+			dAtA[i] = 1
+		} else {
+			dAtA[i] = 0
+		}
+		i--
+		dAtA[i] = 0x18
+	}
+	if len(m.Address) > 0 {
+		i -= len(m.Address)
+		copy(dAtA[i:], m.Address)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Address)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Creator) > 0 {
+		i -= len(m.Creator)
+		copy(dAtA[i:], m.Creator)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Creator)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgUpdateValidatorKYCResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgUpdateValidatorKYCResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgUpdateValidatorKYCResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgDeleteValidatorKYC) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgDeleteValidatorKYC) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgDeleteValidatorKYC) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Address) > 0 {
+		i -= len(m.Address)
+		copy(dAtA[i:], m.Address)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Address)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Creator) > 0 {
+		i -= len(m.Creator)
+		copy(dAtA[i:], m.Creator)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Creator)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgDeleteValidatorKYCResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgDeleteValidatorKYCResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgDeleteValidatorKYCResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
 func encodeVarintTx(dAtA []byte, offset int, v uint64) int {
 	offset -= sovTx(v)
 	base := offset
@@ -993,6 +1593,90 @@ func (m *MsgChangeAdmin) Size() (n int) {
 }
 
 func (m *MsgChangeAdminResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *MsgCreateValidatorKYC) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Creator)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Address)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	if m.Value {
+		n += 2
+	}
+	return n
+}
+
+func (m *MsgCreateValidatorKYCResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *MsgUpdateValidatorKYC) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Creator)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Address)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	if m.Value {
+		n += 2
+	}
+	return n
+}
+
+func (m *MsgUpdateValidatorKYCResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *MsgDeleteValidatorKYC) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Creator)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Address)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	return n
+}
+
+func (m *MsgDeleteValidatorKYCResponse) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -1680,6 +2364,538 @@ func (m *MsgChangeAdminResponse) Unmarshal(dAtA []byte) error {
 		}
 		if fieldNum <= 0 {
 			return fmt.Errorf("proto: MsgChangeAdminResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgCreateValidatorKYC) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgCreateValidatorKYC: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgCreateValidatorKYC: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Creator = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Address", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Address = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 3:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Value", wireType)
+			}
+			var v int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				v |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			m.Value = bool(v != 0)
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgCreateValidatorKYCResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgCreateValidatorKYCResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgCreateValidatorKYCResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgUpdateValidatorKYC) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgUpdateValidatorKYC: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgUpdateValidatorKYC: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Creator = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Address", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Address = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 3:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Value", wireType)
+			}
+			var v int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				v |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			m.Value = bool(v != 0)
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgUpdateValidatorKYCResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgUpdateValidatorKYCResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgUpdateValidatorKYCResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgDeleteValidatorKYC) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgDeleteValidatorKYC: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgDeleteValidatorKYC: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Creator = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Address", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Address = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgDeleteValidatorKYCResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgDeleteValidatorKYCResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgDeleteValidatorKYCResponse: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		default:
