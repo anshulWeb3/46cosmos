@@ -43,9 +43,11 @@ func (k msgServer) CreateKyc(goCtx context.Context, msg *types.MsgCreateKyc) (*t
 
 func (k msgServer) UpdateKyc(goCtx context.Context, msg *types.MsgUpdateKyc) (*types.MsgUpdateKycResponse, error) {
 	ctx := sdk.UnwrapSDKContext(goCtx)
-
+	if msg.Creator != admin {
+		return nil, sdkerrors.Wrap(sdkerrors.ErrInvalidRequest, "Creator is not an admin")
+	}
 	// Check if the value exists
-	valFound, isFound := k.GetKyc(
+	_, isFound := k.GetKyc(
 		ctx,
 		msg.Address,
 	)
@@ -54,9 +56,9 @@ func (k msgServer) UpdateKyc(goCtx context.Context, msg *types.MsgUpdateKyc) (*t
 	}
 
 	// Checks if the the msg creator is the same as the current owner
-	if msg.Creator != valFound.Creator {
-		return nil, sdkerrors.Wrap(sdkerrors.ErrUnauthorized, "incorrect owner")
-	}
+	// if msg.Creator != valFound.Creator {
+	// 	return nil, sdkerrors.Wrap(sdkerrors.ErrUnauthorized, "incorrect owner")
+	// }
 
 	var kyc = types.Kyc{
 		Creator: msg.Creator,
